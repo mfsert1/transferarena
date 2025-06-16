@@ -1,44 +1,130 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TransferArena.net - Amatör Sporların Buluşma Noktası</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <style>
-        body { margin: 0; font-family: 'Montserrat', Arial, sans-serif; background: #1b2236; color: #fff; }
-        .header { background: #009048; padding: 30px 0; text-align: center; }
-        .header h1 { margin: 0; font-size: 2.5rem; }
-        .container { max-width: 560px; margin: 40px auto; padding: 32px; background: #222b44; border-radius: 16px; box-shadow: 0 6px 24px #0007; }
-        .cta-btn { display: block; width: 100%; background: #ffd900; color: #1b2236; border: none; padding: 16px; margin: 18px 0; font-size: 1.2rem; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
-        .cta-btn:hover { background: #009048; color: #fff; }
-        .desc { font-size: 1.1rem; margin-bottom: 30px; }
-        .footer { text-align: center; margin-top: 36px; font-size: 0.95rem; color: #aaa; }
-        @media (max-width: 600px) {
-            .container { padding: 12px; }
-            .header h1 { font-size: 1.5rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransferArena.net - Amatör Sporların Buluşma Noktası</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #181d2b;
+      color: #fff;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 330px;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(25,40,64,0.68);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #ffd900;
+      padding: 40px 16px 24px 16px;
+    }
+    .hero-content h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ffd900;
+      text-shadow: 2px 2px 8px #222b44aa;
+    }
+    .hero-content h2 {
+      margin-top: 14px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #fff;
+      text-shadow: 1px 1px 6px #222b44a5;
+    }
+    .container {
+      max-width: 540px;
+      margin: -50px auto 0 auto;
+      background: #232a44f7;
+      border-radius: 18px;
+      padding: 32px 20px 24px 20px;
+      box-shadow: 0 12px 36px #0008;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+    .cta-btn {
+      display: block;
+      width: 90%;
+      max-width: 320px;
+      margin: 22px auto;
+      background: linear-gradient(90deg,#ffd900 60%,#fba607 100%);
+      color: #232a44;
+      border: none;
+      padding: 18px 0;
+      font-size: 1.22rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 18px #0002;
+      transition: background 0.2s, color 0.2s;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg,#009048 60%,#ffd900 100%);
+      color: #fff;
+    }
+    .desc {
+      font-size: 1.07rem;
+      margin: 18px 0 32px 0;
+      color: #e6e6e6;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+      color: #aaa;
+    }
+    @media (max-width: 640px) {
+      .hero-content h1 { font-size: 1.3rem; }
+      .hero { min-height: 180px; }
+      .container { margin-top: -24px; padding: 16px 6px 16px 6px; }
+      .cta-btn { padding: 14px 0; font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>TransferArena.net</h1>
-        <div>Tüm Amatör Sporlar İçin Sporcu ve Kulüp Buluşma Noktası</div>
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>TransferArena.net</h1>
+      <h2>Amatör sporcular ve kulüpler burada buluşuyor!</h2>
     </div>
-    <div class="container">
-        <div class="desc">
-            <strong>TransferArena</strong> ile basketbol, futbol, voleybol, hentbol, espor ve tüm amatör branşlarda <b>sporcular</b> ve <b>kulüpler</b> kolayca birbirini buluyor.
-            <br><br>
-            <b>Kulübüne yeni sporcular mı arıyorsun?</b><br>
-            <b>Yoksa takımına/branşına katılmak isteyen bir sporcu musun?</b><br><br>
-            Hemen aşağıdan ilan ver veya uygun ilanları incele!
-        </div>
-        <a href="sporcu-arayan-kulupler.html"><button class="cta-btn">Sporcu Arayan Kulüpler</button></a>
-        <a href="kulup-arayan-sporcular.html"><button class="cta-btn">Kulüp Arayan Sporcular</button></a>
-        <a href="ilan-ver.html"><button class="cta-btn" style="background:#009048;color:#fff;">İlan Bırak</button></a>
+  </div>
+  <div class="container">
+    <div class="desc">
+      Futbol, basketbol, voleybol, tenis, atletizm, espor ve daha fazlası... <br>
+      <b>TransferArena</b> ile Tüm Amatör Branşlarda <b>sporcular</b> ve <b>kulüpler</b> kolayca buluşur.
+      <br><br>
+      <span style="color:#ffd900;font-weight:600;">✔ Kulübüne sporcu mu arıyorsun?</span><br>
+      <span style="color:#ffd900;font-weight:600;">✔ Takımına/branşına katılmak isteyen bir sporcu musun?</span>
+      <br><br>
+      Hemen aşağıdan ilan ver veya uygun ilanları incele!
     </div>
-    <div class="footer">
-        &copy; 2025 TransferArena.net | Tüm Hakları Saklıdır.
-    </div>
+    <a href="sporcu-arayan-kulupler.html"><button class="cta-btn">Sporcu Arayan Kulüpler</button></a>
+    <a href="kulup-arayan-sporcular.html"><button class="cta-btn">Kulüp Arayan Sporcular</button></a>
+    <a href="ilan-ver.html"><button class="cta-btn" style="background:#009048;color:#fff;">İlan Bırak</button></a>
+  </div>
+  <div class="footer">
+    &copy; 2025 TransferArena.net | Tüm Hakları Saklıdır.
+  </div>
 </body>
 </html>
