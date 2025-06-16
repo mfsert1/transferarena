@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Ver - TransferArena.net</title>
+    <style>
+        body { background: #1b2236; color: #fff; font-family: 'Montserrat', Arial, sans-serif; }
+        .container { max-width: 440px; margin: 40px auto; background: #222b44; padding: 24px; border-radius: 14px; box-shadow: 0 4px 16px #0005; }
+        label { display: block; margin-top: 16px; font-weight: bold; }
+        input, textarea, select { width: 100%; margin-top: 6px; margin-bottom: 18px; padding: 10px; border-radius: 6px; border: none; font-size: 1rem; }
+        button { background: #ffd900; color: #1b2236; border: none; padding: 12px 0; font-size: 1.1rem; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.2s;}
+        button:hover { background: #009048; color: #fff;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>İlan Bırak</h2>
+        <form action="mailto:sizinmailadresiniz@gmail.com" method="POST" enctype="text/plain">
+            <label for="tur">İlan Türü</label>
+            <select id="tur" name="İlan Türü" required>
+                <option value="">Seçiniz</option>
+                <option value="Sporcu Arıyorum">Sporcu Arıyorum (Kulüp)</option>
+                <option value="Kulüp Arıyorum">Kulüp Arıyorum (Sporcu)</option>
+            </select>
+
+            <label for="branş">Spor Branşı</label>
+            <select id="branş" name="Spor Branşı" required>
+                <option value="">Seçiniz</option>
+                <option value="Futbol">Futbol</option>
+                <option value="Basketbol">Basketbol</option>
+                <option value="Voleybol">Voleybol</option>
+                <option value="Hentbol">Hentbol</option>
+                <option value="Tenis">Tenis</option>
+                <option value="Espor">Espor</option>
+                <option value="Yüzme">Yüzme</option>
+                <option value="Atletizm">Atletizm</option>
+                <option value="Diğer">Diğer</option>
+            </select>
+
+            <label for="adsoyad">Ad Soyad / Kulüp Adı</label>
+            <input type="text" id="adsoyad" name="Ad Soyad" required>
+
+            <label for="aciklama">Açıklama</label>
+            <textarea id="aciklama" name="Açıklama" rows="4" required></textarea>
+
+            <label for="telefon">Telefon / E-posta</label>
+            <input type="text" id="telefon" name="Telefon" required>
+
+            <button type="submit">İlanı Gönder</button>
+        </form>
+    </div>
+</body>
+</html>
