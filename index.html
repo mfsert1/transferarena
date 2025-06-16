@@ -3,128 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TransferArena.net - Amatör Sporların Buluşma Noktası</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <title>TransferArena.net - Türkiye'nin Amatör Spor Platformu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: #181d2b;
+      background: linear-gradient(140deg, #182545 0%, #009048 100%);
       color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
     }
-    .hero {
-      position: relative;
+    .navbar {
       width: 100%;
-      min-height: 330px;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(24,37,69,0.97);
+      box-shadow: 0 4px 32px #0003;
+      padding: 18px 0 8px 0;
+      position: sticky; top: 0; z-index: 99;
+    }
+    .navbar-content {
+      max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px;
+    }
+    .navbar-logo {
+      font-size: 1.65rem; font-weight: bold; color: #ffd900; letter-spacing: 2px;
+      text-shadow: 2px 2px 10px #0004;
+      display: flex; align-items: center;
+    }
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 20px;
+      font-size: 1.08rem;
+      transition: color 0.2s;
+    }
+    .navbar-links a:hover { color: #ffd900; }
+    .hero-section {
+      width: 100%; min-height: 470px; display: flex; align-items: center; justify-content: center;
+      background: url('https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      position: relative;
     }
     .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(25,40,64,0.68);
+      position: absolute; inset: 0; background: rgba(24,37,69,0.82);
       z-index: 1;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: #ffd900;
-      padding: 40px 16px 24px 16px;
+      position: relative; z-index: 2; text-align: center; max-width: 640px; margin: 0 auto; color: #ffd900; padding: 60px 12px 42px 12px;
     }
     .hero-content h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #ffd900;
-      text-shadow: 2px 2px 8px #222b44aa;
+      font-size: 2.7rem; margin-bottom: 8px; font-weight: 700; letter-spacing: 1.8px; color: #ffd900;
+      text-shadow: 2px 3px 12px #222b4499;
     }
     .hero-content h2 {
-      margin-top: 14px;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: #fff;
-      text-shadow: 1px 1px 6px #222b44a5;
+      font-size: 1.26rem; color: #fff; margin-bottom: 26px;
+      text-shadow: 1px 1px 10px #222b44a2;
+      font-weight: 500;
     }
-    .container {
-      max-width: 540px;
-      margin: -50px auto 0 auto;
-      background: #232a44f7;
-      border-radius: 18px;
-      padding: 32px 20px 24px 20px;
-      box-shadow: 0 12px 36px #0008;
-      position: relative;
-      z-index: 10;
-      text-align: center;
+    .hero-btns {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+      margin-top: 18px;
     }
     .cta-btn {
-      display: block;
-      width: 90%;
-      max-width: 320px;
-      margin: 22px auto;
-      background: linear-gradient(90deg,#ffd900 60%,#fba607 100%);
-      color: #232a44;
-      border: none;
-      padding: 18px 0;
-      font-size: 1.22rem;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 18px #0002;
-      transition: background 0.2s, color 0.2s;
+      background: linear-gradient(100deg,#ffd900 70%,#fba607 100%);
+      color: #182545; border: none; padding: 18px 32px;
+      font-size: 1.14rem; border-radius: 12px;
+      font-weight: bold; box-shadow: 0 4px 18px #0003;
+      cursor: pointer; transition: background 0.25s, color 0.2s;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
     }
-    .cta-btn:hover {
-      background: linear-gradient(90deg,#009048 60%,#ffd900 100%);
+    .cta-btn.green {
+      background: linear-gradient(90deg,#009048 80%,#ffd900 100%);
       color: #fff;
     }
-    .desc {
-      font-size: 1.07rem;
-      margin: 18px 0 32px 0;
-      color: #e6e6e6;
+    .cta-btn:hover { background: linear-gradient(90deg,#ffd900 50%,#009048 100%); color: #fff; }
+    .cta-btn.green:hover { background: linear-gradient(90deg,#ffd900 50%,#009048 100%); color: #182545; }
+    .section {
+      max-width: 1060px; margin: 0 auto; background: #232a44ee; border-radius: 20px;
+      box-shadow: 0 2px 24px #0005; padding: 44px 24px; margin-top: -40px; margin-bottom: 34px;
     }
+    .section-title {
+      font-size: 1.42rem; font-weight: 700; color: #ffd900; text-align: center;
+      margin-bottom: 24px;
+    }
+    .icon-bar {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 28px;
+    }
+    .icon-col {
+      display: flex; flex-direction: column; align-items: center; font-size: 2.7rem; color: #ffd900;
+      filter: drop-shadow(0 2px 10px #00904890);
+    }
+    .icon-col span { font-size: 1.08rem; margin-top: 8px; color: #fff; font-weight: 600; text-align: center; }
+    .how-section {
+      display: flex; flex-wrap: wrap; gap: 34px; margin-top: 38px; justify-content: center;
+    }
+    .how-step {
+      flex: 1 1 220px; background: #151b29f4; border-radius: 16px; padding: 22px 18px;
+      color: #ffd900; text-align: center; box-shadow: 0 2px 8px #0004; min-width: 200px;
+    }
+    .how-step i { font-size: 2.2rem; margin-bottom: 12px; color: #ffd900; }
+    .how-step span { display: block; color: #fff; margin-top: 8px; font-size: 1.06rem; }
     .footer {
-      text-align: center;
-      margin-top: 50px;
-      margin-bottom: 12px;
-      font-size: 0.98rem;
-      color: #aaa;
+      text-align: center; margin-top: 40px; margin-bottom: 10px; font-size: 1rem; color: #bbb;
     }
-    @media (max-width: 640px) {
-      .hero-content h1 { font-size: 1.3rem; }
-      .hero { min-height: 180px; }
-      .container { margin-top: -24px; padding: 16px 6px 16px 6px; }
-      .cta-btn { padding: 14px 0; font-size: 1rem; }
+    @media (max-width: 800px) {
+      .section { margin-top: -16px; padding: 22px 8px; }
+      .navbar-content { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 600px) {
+      .hero-section { min-height: 200px; }
+      .hero-content h1 { font-size: 1.22rem; }
+      .hero-content h2 { font-size: 1rem; }
+      .section { padding: 10px 2px; }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
+  <div class="navbar">
+    <div class="navbar-content">
+      <div class="navbar-logo"><i class="fas fa-trophy"></i>&nbsp;TransferArena.net</div>
+      <div class="navbar-links">
+        <a href="#branşlar">Branşlar</a>
+        <a href="#nasil">Nasıl Çalışır?</a>
+        <a href="ilan-ver.html" style="color:#ffd900;">İlan Ver</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>TransferArena.net</h1>
-      <h2>Amatör sporcular ve kulüpler burada buluşuyor!</h2>
+      <h1>Türkiye'nin Amatör Spor Platformu</h1>
+      <h2>Basketbol, futbol, voleybol, atletizm, espor ve onlarca branş<br>– sporcular ve kulüpler TransferArena'da buluşuyor!</h2>
+      <div class="hero-btns">
+        <a class="cta-btn" href="sporcu-arayan-kulupler.html"><i class="fas fa-users"></i>Sporcu Arayan Kulüpler</a>
+        <a class="cta-btn" href="kulup-arayan-sporcular.html"><i class="fas fa-running"></i>Kulüp Arayan Sporcular</a>
+        <a class="cta-btn green" href="ilan-ver.html"><i class="fas fa-plus-circle"></i>Ücretsiz İlan Ver</a>
+      </div>
     </div>
   </div>
-  <div class="container">
-    <div class="desc">
-      Futbol, basketbol, voleybol, tenis, atletizm, espor ve daha fazlası... <br>
-      <b>TransferArena</b> ile Tüm Amatör Branşlarda <b>sporcular</b> ve <b>kulüpler</b> kolayca buluşur.
-      <br><br>
-      <span style="color:#ffd900;font-weight:600;">✔ Kulübüne sporcu mu arıyorsun?</span><br>
-      <span style="color:#ffd900;font-weight:600;">✔ Takımına/branşına katılmak isteyen bir sporcu musun?</span>
-      <br><br>
-      Hemen aşağıdan ilan ver veya uygun ilanları incele!
+  <div class="section" id="branşlar">
+    <div class="section-title">Popüler Branşlar</div>
+    <div class="icon-bar">
+      <div class="icon-col"><i class="fas fa-futbol"></i><span>Futbol</span></div>
+      <div class="icon-col"><i class="fas fa-basketball-ball"></i><span>Basketbol</span></div>
+      <div class="icon-col"><i class="fas fa-volleyball-ball"></i><span>Voleybol</span></div>
+      <div class="icon-col"><i class="fas fa-person-swimming"></i><span>Yüzme</span></div>
+      <div class="icon-col"><i class="fas fa-table-tennis-paddle-ball"></i><span>Masa Tenisi</span></div>
+      <div class="icon-col"><i class="fas fa-running"></i><span>Atletizm</span></div>
+      <div class="icon-col"><i class="fas fa-chess"></i><span>Satranç</span></div>
+      <div class="icon-col"><i class="fas fa-headset"></i><span>Espor</span></div>
+      <div class="icon-col"><i class="fas fa-dumbbell"></i><span>Diğer</span></div>
     </div>
-    <a href="sporcu-arayan-kulupler.html"><button class="cta-btn">Sporcu Arayan Kulüpler</button></a>
-    <a href="kulup-arayan-sporcular.html"><button class="cta-btn">Kulüp Arayan Sporcular</button></a>
-    <a href="ilan-ver.html"><button class="cta-btn" style="background:#009048;color:#fff;">İlan Bırak</button></a>
+    <div class="desc" style="text-align:center;">
+      Tüm amatör spor branşları için<br>
+      <b>sporcular</b> ve <b>kulüpler</b> tek bir çatı altında.
+    </div>
+  </div>
+  <div class="section" id="nasil">
+    <div class="section-title">Nasıl Çalışır?</div>
+    <div class="how-section">
+      <div class="how-step">
+        <i class="fas fa-clipboard-list"></i>
+        <span><b>1. İlanını Oluştur</b><br>Hangi branşta olursan ol, hemen ücretsiz ilanını bırak!</span>
+      </div>
+      <div class="how-step">
+        <i class="fas fa-search"></i>
+        <span><b>2. İlanları İncele</b><br>Sporcu veya kulüp arayanlara kolayca göz at, filtrele.</span>
+      </div>
+      <div class="how-step">
+        <i class="fas fa-comments"></i>
+        <span><b>3. Hızlı İletişim</b><br>Aradığını bul, iletişime geç ve yeni başarılar kazan!</span>
+      </div>
+    </div>
   </div>
   <div class="footer">
-    &copy; 2025 TransferArena.net | Tüm Hakları Saklıdır.
+    &copy; 2025 TransferArena.net | Türkiye'nin Amatör Spor Platformu<br>
+    Sitenin yayında kalması ve büyümesi için <b>tamamen ücretsizdir.</b>
   </div>
 </body>
 </html>
