@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İlan Ver | TransferArena.net</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body { background: #1b2236; color: #fff; font-family: 'Montserrat', Arial, sans-serif; margin: 0;}
+    .container { max-width: 500px; margin: 40px auto; padding: 32px; background: #232a44f7; border-radius: 18px; box-shadow: 0 6px 24px #0007;}
+    h1 { color: #ffd900; font-size: 2rem; text-align: center; margin-bottom: 18px;}
+    .menu { margin-bottom: 20px; text-align: center;}
+    .menu a { color: #ffd900; margin: 0 14px; text-decoration: none; font-weight: bold;}
+    .menu a:hover { text-decoration: underline;}
+    form label { display: block; margin-top: 16px; font-weight: bold; }
+    form input, form select, form textarea { width: 100%; margin-top: 6px; margin-bottom: 14px; padding: 10px; border-radius: 6px; border: none; font-size: 1rem; }
+    form button { background: #ffd900; color: #232a44; border: none; padding: 14px 0; font-size: 1.15rem; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.2s;}
+    form button:hover { background: #009048; color: #fff;}
+    .not { color:#ffd900; margin:10px 0 0 0; font-size: 0.98rem;}
+    @media (max-width:700px){ .container{padding:10px;} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="menu">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="sporcu-arayan-kulupler.html">Sporcu Arayan Kulüpler</a>
+      <a href="kulup-arayan-sporcular.html">Kulüp Arayan Sporcular</a>
+    </div>
+    <h1>İlan Ver</h1>
+    <form action="mailto:info@transferarena.net" method="POST" enctype="text/plain">
+      <label for="tur">İlan Türü</label>
+      <select id="tur" name="İlan Türü" required>
+        <option value="">Seçiniz</option>
+        <option>Sporcu Arıyorum (Kulüp)</option>
+        <option>Kulüp Arıyorum (Sporcu)</option>
+      </select>
+      <label for="adsoyad">Ad Soyad / Kulüp Adı</label>
+      <input type="text" id="adsoyad" name="Ad Soyad / Kulüp Adı" required>
+      <label for="brans">Branş</label>
+      <select id="brans" name="Branş" required>
+        <option value="">Seçiniz</option>
+        <option>Futbol</option>
+        <option>Basketbol</option>
+        <option>Voleybol</option>
+        <option>Yüzme</option>
+        <option>Masa Tenisi</option>
+        <option>Atletizm</option>
+        <option>Satranç</option>
+        <option>Espor</option>
+        <option>Diğer</option>
+      </select>
+      <label for="pozisyon">Pozisyon / Rol</label>
+      <input type="text" id="pozisyon" name="Pozisyon / Rol" required>
+      <label for="sehir">Şehir</label>
+      <input type="text" id="sehir" name="Şehir" required>
+      <label for="yas">Yaş / Yaş Aralığı</label>
+      <input type="text" id="yas" name="Yaş / Yaş Aralığı" required>
+      <label for="aciklama">Açıklama</label>
+      <textarea id="aciklama" name="Açıklama" rows="3" required></textarea>
+      <label for="iletisim">İletişim (tel/e-posta)</label>
+      <input type="text" id="iletisim" name="İletişim" required>
+      <button type="submit">İlanı Gönder</button>
+      <div class="not">*Tüm alanlar zorunludur. İlanlarınız site editörleri tarafından kontrol edilip yayınlanacaktır.</div>
+    </form>
+  </div>
+</body>
+</html>
