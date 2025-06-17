@@ -134,6 +134,17 @@
         elem.addEventListener('input', filterIlanlar);
       });
     });
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const brans = urlParams.get('brans');
+      if (brans) {
+        const select = document.getElementById('f-brans');
+        if (select) {
+          select.value = brans;
+          select.dispatchEvent(new Event('input'));
+        }
+      }
+    });
   </script>
 </body>
 </html>
