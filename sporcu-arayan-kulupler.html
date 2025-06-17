@@ -125,7 +125,7 @@
           ilan[cols[i]] = cell ? cell.v : "";
         });
         return ilan;
-      //}).filter(ilan => ilan["İlan Türü"] === ILAN_TURU);
+      }).filter(ilan => ilan["İlan Türü"] === ILAN_TURU);
       ilanlariGoster(ilanlar);
     }
     fetchSheetData().then(() => {
