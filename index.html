@@ -23,18 +23,30 @@
     .cta-btn.green { background: linear-gradient(90deg,#009048 80%,#ffd900 100%); color: #fff; }
     .cta-btn:hover { background: linear-gradient(90deg,#ffd900 50%,#009048 100%); color: #fff; }
     .cta-btn.green:hover { background: linear-gradient(90deg,#ffd900 50%,#009048 100%); color: #182545; }
+    .trust-bar {display:flex;gap:28px;justify-content:center;align-items:center;margin-top:22px;margin-bottom:18px;}
+    .trust-item {display:flex;align-items:center;gap:10px;font-size:1.07rem;}
+    .trust-item i {color:#ffd900;font-size:1.4rem;}
     .section { max-width: 1060px; margin: 0 auto; background: #232a44ee; border-radius: 20px; box-shadow: 0 2px 24px #0005; padding: 44px 24px; margin-top: -40px; margin-bottom: 34px; }
     .section-title { font-size: 1.42rem; font-weight: 700; color: #ffd900; text-align: center; margin-bottom: 24px; }
     .icon-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 28px; }
-    .icon-col { display: flex; flex-direction: column; align-items: center; font-size: 2.7rem; color: #ffd900; filter: drop-shadow(0 2px 10px #00904890); }
+    .icon-col { display: flex; flex-direction: column; align-items: center; font-size: 2.7rem; color: #ffd900; filter: drop-shadow(0 2px 10px #00904890); text-decoration: none; cursor:pointer; transition: transform 0.15s;}
+    .icon-col:hover { transform: scale(1.13); color:#fba607; }
     .icon-col span { font-size: 1.08rem; margin-top: 8px; color: #fff; font-weight: 600; text-align: center; }
     .how-section { display: flex; flex-wrap: wrap; gap: 34px; margin-top: 38px; justify-content: center; }
     .how-step { flex: 1 1 220px; background: #151b29f4; border-radius: 16px; padding: 22px 18px; color: #ffd900; text-align: center; box-shadow: 0 2px 8px #0004; min-width: 200px; }
     .how-step i { font-size: 2.2rem; margin-bottom: 12px; color: #ffd900; }
     .how-step span { display: block; color: #fff; margin-top: 8px; font-size: 1.06rem; }
+    .faq-list {max-width: 700px; margin: 0 auto;}
+    .faq-item { background: #151b29f7; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 1px 8px #0002; }
+    .faq-q { cursor: pointer; font-size: 1.08rem; font-weight: 600; padding: 16px 22px; color: #ffd900; display: flex; align-items: center; justify-content: space-between;}
+    .faq-q i { margin-right: 10px;}
+    .faq-a { display: none; color: #fff; background: #232a44; border-radius: 0 0 12px 12px; padding: 16px 22px; font-size: 1.01rem;}
+    .faq-item.active .faq-a { display: block;}
+    .faq-toggle { margin-left: auto; color: #ffd900; }
+    .desc {text-align:center;color:#ffd900; margin-bottom:16px;}
     .footer { text-align: center; margin-top: 40px; margin-bottom: 10px; font-size: 1rem; color: #bbb; }
     @media (max-width: 800px) { .section { margin-top: -16px; padding: 22px 8px; } .navbar-content { flex-direction: column; gap: 8px; } }
-    @media (max-width: 600px) { .hero-section { min-height: 200px; } .hero-content h1 { font-size: 1.22rem; } .hero-content h2 { font-size: 1rem; } .section { padding: 10px 2px; } }
+    @media (max-width: 600px) { .hero-section { min-height: 200px; } .hero-content h1 { font-size: 1.22rem; } .hero-content h2 { font-size: 1rem; } .section { padding: 10px 2px; } .trust-bar {flex-direction:column;gap:10px;} }
   </style>
 </head>
 <body>
@@ -62,39 +74,63 @@
       </div>
     </div>
   </div>
+  <div class="trust-bar">
+    <div class="trust-item"><i class="fas fa-lock"></i> %100 Güvenli</div>
+    <div class="trust-item"><i class="fas fa-star"></i> Kullanıcı Dostu</div>
+    <div class="trust-item"><i class="fas fa-mobile-alt"></i> Mobil Uyumlu</div>
+  </div>
   <div class="section" id="branşlar">
     <div class="section-title">Popüler Branşlar</div>
     <div class="icon-bar">
-      <div class="icon-col"><i class="fas fa-futbol"></i><span>Futbol</span></div>
-      <div class="icon-col"><i class="fas fa-basketball-ball"></i><span>Basketbol</span></div>
-      <div class="icon-col"><i class="fas fa-volleyball-ball"></i><span>Voleybol</span></div>
-      <div class="icon-col"><i class="fas fa-person-swimming"></i><span>Yüzme</span></div>
-      <div class="icon-col"><i class="fas fa-table-tennis-paddle-ball"></i><span>Masa Tenisi</span></div>
-      <div class="icon-col"><i class="fas fa-running"></i><span>Atletizm</span></div>
-      <div class="icon-col"><i class="fas fa-chess"></i><span>Satranç</span></div>
-      <div class="icon-col"><i class="fas fa-headset"></i><span>Espor</span></div>
-      <div class="icon-col"><i class="fas fa-dumbbell"></i><span>Diğer</span></div>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Futbol"><i class="fas fa-futbol"></i><span>Futbol</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Basketbol"><i class="fas fa-basketball-ball"></i><span>Basketbol</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Voleybol"><i class="fas fa-volleyball-ball"></i><span>Voleybol</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Yüzme"><i class="fas fa-person-swimming"></i><span>Yüzme</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Masa Tenisi"><i class="fas fa-table-tennis-paddle-ball"></i><span>Masa Tenisi</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Atletizm"><i class="fas fa-running"></i><span>Atletizm</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Satranç"><i class="fas fa-chess"></i><span>Satranç</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Espor"><i class="fas fa-headset"></i><span>Espor</span></a>
+      <a class="icon-col" href="kulup-arayan-sporcular.html?brans=Diğer"><i class="fas fa-dumbbell"></i><span>Diğer</span></a>
     </div>
-    <div class="desc" style="text-align:center;">
+    <div class="desc">
       Tüm amatör spor branşları için <b>sporcular</b> ve <b>kulüpler</b> tek bir çatı altında.
     </div>
   </div>
   <div class="section" id="sss">
     <div class="section-title">Sıkça Sorulan Sorular</div>
-    <div style="max-width:700px;margin:0 auto;">
-      <b>TransferArena.net nedir?</b><br>
-      Amatör spor kulüpleri ve sporcuları Türkiye çapında buluşturan bir dijital platformdur.<br><br>
-      <b>Hangi branşlarda ilan verebilirim?</b><br>
-      Tüm amatör branşlarda! (Futbol, basketbol, voleybol, espor, masa tenisi, vb.)<br><br>
-      <b>Kullanım ücretli mi?</b><br>
-      Hayır, TransferArena.net tamamen ücretsizdir.<br><br>
-      <b>İlanımı nasıl düzenlerim ya da kaldırırım?</b><br>
-      İletişim: info@transferarena.net<br><br>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-question-circle"></i> TransferArena.net nedir? <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">Amatör spor kulüpleri ve sporcuları Türkiye çapında buluşturan bir dijital platformdur.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-volleyball-ball"></i> Hangi branşlarda ilan verebilirim? <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">Tüm amatör branşlarda! (Futbol, basketbol, voleybol, espor, masa tenisi, vb.)</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-coins"></i> Kullanım ücretli mi? <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">Hayır, TransferArena.net tamamen ücretsizdir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-edit"></i> İlanımı nasıl düzenlerim ya da kaldırırım? <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">İletişim: info@transferarena.net</div>
+      </div>
     </div>
   </div>
   <div class="footer">
     &copy; 2025 TransferArena.net | Türkiye'nin Amatör Spor Platformu<br>
     Site tamamen ücretsizdir.
   </div>
+  <script>
+    // SSS (Accordion)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-q').forEach(function(el) {
+        el.addEventListener('click', function() {
+          const item = el.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
