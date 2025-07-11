@@ -42,7 +42,6 @@
       form input, form select, form textarea { font-size: 1rem; padding: 11px 7px;}
       .navbar-logo { font-size: 1rem;}
     }
-    /* Hamburger menü - mobilde */
     @media (max-width: 700px) {
       .navbar-content { flex-direction: row; }
       .navbar-links {
@@ -79,17 +78,17 @@
   </div>
   <div class="container">
     <h1>İlan Ver</h1>
-    <form action="mailto:info@transferarena.net" method="POST" enctype="text/plain">
+    <form id="ilanFormu">
       <label for="tur">İlan Türü</label>
-      <select id="tur" name="İlan Türü" required>
+      <select id="tur" name="tur" required>
         <option value="">Seçiniz</option>
         <option>Sporcu Arıyorum (Kulüp)</option>
         <option>Kulüp Arıyorum (Sporcu)</option>
       </select>
       <label for="adsoyad">Ad Soyad / Kulüp Adı</label>
-      <input type="text" id="adsoyad" name="Ad Soyad / Kulüp Adı" required>
+      <input type="text" id="adsoyad" name="adsoyad" required>
       <label for="brans">Branş</label>
-      <select id="brans" name="Branş" required>
+      <select id="brans" name="brans" required>
         <option value="">Seçiniz</option>
         <option>Futbol</option>
         <option>Basketbol</option>
@@ -102,17 +101,17 @@
         <option>Diğer</option>
       </select>
       <label for="pozisyon">Pozisyon / Rol</label>
-      <input type="text" id="pozisyon" name="Pozisyon / Rol" required>
+      <input type="text" id="pozisyon" name="pozisyon" required>
       <label for="sehir">Şehir</label>
-      <input type="text" id="sehir" name="Şehir" required>
+      <input type="text" id="sehir" name="sehir" required>
       <label for="yas">Yaş / Yaş Aralığı</label>
-      <input type="text" id="yas" name="Yaş / Yaş Aralığı" required>
+      <input type="text" id="yas" name="yas" required>
       <label for="aciklama">Açıklama</label>
-      <textarea id="aciklama" name="Açıklama" rows="3" required></textarea>
+      <textarea id="aciklama" name="aciklama" rows="3" required></textarea>
       <label for="iletisim">İletişim (tel/e-posta)</label>
-      <input type="text" id="iletisim" name="İletişim" required>
+      <input type="text" id="iletisim" name="iletisim" required>
       <button type="submit">İlanı Gönder</button>
-      <div class="not">*Tüm alanlar zorunludur. İlanlarınız site editörleri tarafından kontrol edilip yayınlanacaktır.</div>
+      <div class="not" id="sonucMesaj" style="display:none;"></div>
     </form>
   </div>
   <script>
@@ -128,6 +127,39 @@
           if (window.innerWidth < 700) {
             links.classList.remove('show');
           }
+        });
+      });
+
+      // Formu Google Sheets'e bağla
+      document.getElementById('ilanFormu').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = e.target;
+        var data = {
+          tur: form.tur.value,
+          adsoyad: form.adsoyad.value,
+          brans: form.brans.value,
+          pozisyon: form.pozisyon.value,
+          sehir: form.sehir.value,
+          yas: form.yas.value,
+          aciklama: form.aciklama.value,
+          iletisim: form.iletisim.value
+        };
+        fetch('https://script.google.com/macros/s/AKfycbwS5eFj0sjx4N5no3F8MZgicex8kbzun3Ve0ubaztK0EEuk5Y8U6pyYL1FmkrFXe5kq/exec', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(r => r.text())
+        .then(function(response) {
+          document.getElementById('sonucMesaj').innerText = "Başvurunuz kaydedildi!";
+          document.getElementById('sonucMesaj').style.display = 'block';
+          form.reset();
+        })
+        .catch(function() {
+          document.getElementById('sonucMesaj').innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
+          document.getElementById('sonucMesaj').style.display = 'block';
         });
       });
     });
